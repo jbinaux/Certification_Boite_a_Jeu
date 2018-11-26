@@ -2,3 +2,16 @@ button.btn.text-white > i
 {
     color: white;
 }
+
+.hide-sm
+{
+    display: none;
+}
+
+@media only screen and (min-width: 1000px)
+{
+    .hide-sm
+    {
+        display: block;
+    }
+}
