@@ -8,7 +8,7 @@ button.btn.text-white > i
     display: none;
 }
 
-@media only screen and (min-width: 1000px)
+@media only screen and (min-width: 992px)
 {
     .hide-sm
     {

@@ -1,0 +1,19 @@
+.container {
+  height: 80vh;
+  position: relative;
+  top: 56px;
+}
+
+app-register {
+    display: none;
+}
+
+@media only screen and (min-width: 992px) {
+  app-register {
+    display: block;
+    width: 50%;
+  }
+  .hide-lg{
+    display: none;
+  }
+}
