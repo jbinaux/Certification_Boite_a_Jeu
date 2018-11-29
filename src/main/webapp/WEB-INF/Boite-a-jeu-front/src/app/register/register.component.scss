@@ -1,16 +1,5 @@
-.container {
-  height: 80vh;
-  position: relative;
-  top: 56px;
-}
-
 @media only screen and (min-width: 992px) {
   .hide-lg {
     display: none;
-  }
-  .container {
-    height: 100%;
-    width: 100%;
-    top: 0px;
   }
 }

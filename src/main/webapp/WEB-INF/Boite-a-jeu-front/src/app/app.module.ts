@@ -10,6 +10,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { RegisterComponent } from './register/register.component';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { SignInRegisterMasterComponent } from './sign-in-register-master/sign-in-register-master.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { AppRoutingModule } from './app-routing.module';
     DisplayReviewsComponent,
     BestGamesComponent,
     SignInComponent,
-    RegisterComponent
+    RegisterComponent,
+    SignInRegisterMasterComponent
   ],
   imports: [
     BrowserModule,
