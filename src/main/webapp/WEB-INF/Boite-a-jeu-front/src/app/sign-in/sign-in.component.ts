@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Location } from '@angular/common';
 
 @Component({
@@ -8,6 +8,8 @@ import { Location } from '@angular/common';
 })
 export class SignInComponent implements OnInit {
 
+  @Output() event = new EventEmitter();
+
   constructor(private location: Location) { }
 
   ngOnInit() {
@@ -15,5 +17,9 @@ export class SignInComponent implements OnInit {
 
   goBack(): void {
     this.location.back();
+  }
+
+  toggleRegister() {
+    this.event.emit('');
   }
 }

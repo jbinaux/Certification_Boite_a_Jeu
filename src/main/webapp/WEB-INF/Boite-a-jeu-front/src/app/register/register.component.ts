@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-register',
@@ -8,12 +7,14 @@ import { Location } from '@angular/common';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private location: Location) { }
+  @Output() toggleSign = new EventEmitter();
+
+  constructor() { }
 
   ngOnInit() {
   }
 
-  goBack(): void {
-    this.location.back();
+  toggleSignIn(): void {
+    this.toggleSign.emit('');
   }
 }
