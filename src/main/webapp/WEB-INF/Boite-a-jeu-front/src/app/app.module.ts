@@ -11,6 +11,8 @@ import { RegisterComponent } from './register/register.component';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { SignInRegisterMasterComponent } from './sign-in-register-master/sign-in-register-master.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { SignInRegisterMasterComponent } from './sign-in-register-master/sign-in
     BestGamesComponent,
     SignInComponent,
     RegisterComponent,
-    SignInRegisterMasterComponent
+    SignInRegisterMasterComponent,
+    HomepageComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
