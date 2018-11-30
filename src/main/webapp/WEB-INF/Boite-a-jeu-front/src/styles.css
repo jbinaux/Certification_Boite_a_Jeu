@@ -7,3 +7,13 @@
 {
     background-color: #aed581;
 }
+
+html
+{
+    min-height: 100%;
+}
+
+body
+{
+    min-height: 100%;
+}
