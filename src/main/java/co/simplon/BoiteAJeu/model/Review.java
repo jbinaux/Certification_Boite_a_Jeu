@@ -6,6 +6,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Review {
 
@@ -20,6 +22,7 @@ public class Review {
 	@ManyToOne
 	private User user;
 	
+	@JsonIgnore
 	@ManyToOne
 	private Boardgame boardgame;
 
