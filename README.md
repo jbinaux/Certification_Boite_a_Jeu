@@ -1,6 +1,6 @@
 # La Boite à Jeu
 
-[Fonctionnement]: #fonctionnement
+[Fonctionnement](#fonctionnement)
 
 
 
