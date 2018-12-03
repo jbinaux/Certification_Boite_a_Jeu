@@ -1,8 +1,8 @@
 # La Boite à Jeu
 
+[Fonctionnement]: #fonctionnement
 
 
-[TOC]
 
 ## Contexte
 
@@ -32,7 +32,7 @@ L'application web est designée en mobile-first, la majorité du trafic internet
 - Spring
 - Angular
 
-## Fontionnement
+## Fonctionnement
 
 on accède a l'API par le chemin "/api"
 
