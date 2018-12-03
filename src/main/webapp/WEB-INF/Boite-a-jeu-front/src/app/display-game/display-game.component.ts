@@ -10,12 +10,10 @@ import { Boardgame } from '../models/boardgame';
 export class DisplayGameComponent implements OnInit {
 
   boardgames: Boardgame[];
-  boardgame: Boardgame;
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
     this.dataService.getBoardgames().subscribe(bg => this.boardgames = bg);
-    this.boardgame = this.boardgames[0];
   }
 
 }

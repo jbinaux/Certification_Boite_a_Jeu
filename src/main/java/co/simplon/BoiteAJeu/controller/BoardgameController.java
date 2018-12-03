@@ -2,6 +2,7 @@ package co.simplon.BoiteAJeu.controller;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,7 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 import co.simplon.BoiteAJeu.model.Boardgame;
 import co.simplon.BoiteAJeu.model.Review;
 import co.simplon.BoiteAJeu.repository.BoardgameRepository;
+import comparator.DateComparator;
 
+@CrossOrigin("http://localhost:4200")
 @RestController
 @RequestMapping("/api/boardgame")
 public class BoardgameController {
@@ -42,11 +45,13 @@ public class BoardgameController {
 	@GetMapping
 	public List<Boardgame> getBoardgame()
 	{
+		DateComparator comp = new DateComparator();
 		List<Boardgame> list = boardgameRepo.findAll();
 		for (Boardgame bg : list)
 		{
 			bg.setRating(averageReviews(bg.getReviews()));
 		}
+		list.sort(comp);
 		return list;
 	}
 	
