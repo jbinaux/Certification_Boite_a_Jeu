@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { DataService } from '../services/data.service';
+import { Component, OnInit, Input } from '@angular/core';
 import { Boardgame } from '../models/boardgame';
 
 @Component({
@@ -9,11 +8,10 @@ import { Boardgame } from '../models/boardgame';
 })
 export class DisplayGameComponent implements OnInit {
 
-  boardgames: Boardgame[];
-  constructor(private dataService: DataService) { }
+  @Input() boardgame: Boardgame;
+  constructor() { }
 
   ngOnInit() {
-    this.dataService.getBoardgames().subscribe(bg => this.boardgames = bg);
   }
 
 }

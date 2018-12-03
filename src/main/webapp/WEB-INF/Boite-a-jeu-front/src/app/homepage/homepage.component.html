@@ -1,10 +1,10 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-6">
-      <app-display-game></app-display-game>
+      <app-display-game [boardgame]="boardgames[bgLength]"></app-display-game>
     </div>
     <div class="col-md-6">
-      <app-display-reviews></app-display-reviews>
+      <app-display-reviews [boardgame]="boardgames[bgLength]"></app-display-reviews>
     </div>
   </div>
   <div class="row">

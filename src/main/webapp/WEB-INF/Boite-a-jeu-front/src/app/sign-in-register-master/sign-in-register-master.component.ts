@@ -20,7 +20,7 @@ export class SignInRegisterMasterComponent implements OnInit {
   }
 
   @HostListener('window:resize', ['$event'])
-  onResize(event) {
+  onResize() {
     this.innerWidth = window.innerWidth;
   }
 

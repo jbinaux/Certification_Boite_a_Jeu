@@ -1,3 +1,17 @@
 <h1>dernière review</h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rutrum porta ipsum blandit malesuada. In hac habitasse platea dictumst. Morbi feugiat varius metus, ac tristique purus mattis nec. Sed orci sapien, ultricies a libero eget, feugiat ornare tellus. Praesent maximus quis nunc vitae sollicitudin. Fusce arcu ante, accumsan placerat arcu eu, mattis scelerisque nulla. Sed vitae sapien erat. Nulla rutrum, mauris non sodales bibendum, leo orci tincidunt tellus, id interdum orci risus a tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus. </p>
-<p>Vivamus vestibulum turpis non libero iaculis, in elementum mauris vestibulum. Proin id odio mi. Ut egestas erat diam, et gravida sapien mattis vitae. Ut in mauris sit amet nunc facilisis congue. Nunc vel risus at nibh malesuada facilisis. Donec feugiat consequat leo interdum fringilla. Nunc non arcu eget metus consectetur lacinia. In efficitur justo et porta eleifend. Curabitur laoreet lorem nec metus cursus, et ullamcorper ligula molestie. Integer tristique euismod porta. Donec ut enim nulla. </p>
+<div class="d-flex" *ngIf="innerWidth >= 576">
+  <div class="card flex-row" *ngFor="let review of boardgame.reviews">
+    <div class="card-body">
+      <h5 class="card-title">{{ review.title }}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">par {{ review.user.username }}</h6>
+      <p class="card-text">{{ review.text }}</p>
+    </div>
+  </div>
+</div>
+<div class="card flex-row" *ngIf="innerWidth < 576">
+  <div class="card-body">
+    <h5 class="card-title">{{ boardgame.reviews[0].title }}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">par {{ boardgame.reviews[0].user.username }}</h6>
+    <p class="card-text">{{ boardgame.reviews[0].text }}</p>
+  </div>
+</div>

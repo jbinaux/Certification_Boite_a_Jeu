@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, HostListener } from '@angular/core';
+import { Boardgame } from '../models/boardgame';
 
 @Component({
   selector: 'app-display-reviews',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DisplayReviewsComponent implements OnInit {
 
+  @Input() boardgame: Boardgame;
+  public innerWidth: any;
   constructor() { }
 
   ngOnInit() {
+    this.innerWidth = window.innerWidth;
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.innerWidth = window.innerWidth;
   }
 
 }
