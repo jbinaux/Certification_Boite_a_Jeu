@@ -1,9 +1,11 @@
 <div class="col-sm-7">
-  <div class="image">
-  </div>
-  <div class="secondary-green title d-flex align-items-center justify-content-center">
-    <h2>{{ boardgame.name }}</h2>
-  </div>
+  <a routerLink="/game/{{boardgame.id}}" routerLinkActive="router-link-active" >
+    <div class="image">
+    </div>
+    <div class="secondary-green title d-flex align-items-center justify-content-center">
+      <h2>{{ boardgame.name }}</h2>
+    </div>
+  </a>
 </div>
 <div class="col-sm-5">
 

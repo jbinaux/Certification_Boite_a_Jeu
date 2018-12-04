@@ -1,0 +1,23 @@
+.image {
+  background-image: url("../../assets/images/placeholder.png");
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  padding-top: 100%;
+}
+ul
+{
+    list-style: none;
+    padding: 0;
+    ul{
+        border-bottom: 1px solid lightgray;
+        padding: 4px;
+        li{
+            margin: 2px;
+            h5{
+                font-weight: bold;
+                font-size: 1em;
+            }
+        }
+    }
+}

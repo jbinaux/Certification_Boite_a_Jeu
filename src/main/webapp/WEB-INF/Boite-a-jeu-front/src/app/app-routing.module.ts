@@ -7,7 +7,7 @@ import { GamepageComponent } from './gamepage/gamepage.component';
 const routes: Routes = [
   { path: '', component: HomepageComponent },
   { path: 'sign-in', component: SignInRegisterMasterComponent },
-  { path: 'game', component: GamepageComponent}
+  { path: 'game/:id', component: GamepageComponent}
 ];
 
 @NgModule({

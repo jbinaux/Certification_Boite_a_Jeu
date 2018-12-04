@@ -13,4 +13,8 @@ export class DataService {
   public getBoardgames(): Observable<Boardgame[]> {
     return this.httpClient.get<Boardgame[]>('http://localhost:8080/api/boardgame');
   }
+
+  public getBoardgame(id): Observable<Boardgame> {
+    return this.httpClient.get<Boardgame>('http://localhost:8080/api/boardgame/' + id);
+  }
 }
