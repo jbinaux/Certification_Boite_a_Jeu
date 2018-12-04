@@ -14,6 +14,7 @@ import { SignInRegisterMasterComponent } from './sign-in-register-master/sign-in
 import { HomepageComponent } from './homepage/homepage.component';
 import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
+import { GamepageComponent } from './gamepage/gamepage.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { HttpClientModule } from '@angular/common/http';
     RegisterComponent,
     SignInRegisterMasterComponent,
     HomepageComponent,
-    FooterComponent
+    FooterComponent,
+    GamepageComponent
   ],
   imports: [
     BrowserModule,
