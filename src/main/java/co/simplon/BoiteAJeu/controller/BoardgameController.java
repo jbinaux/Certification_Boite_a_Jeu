@@ -62,4 +62,10 @@ public class BoardgameController {
 		bg.setRating(averageReviews(bg.getReviews()));
 		return bg;
 	}
+	
+	@GetMapping("/recherche/{name}")
+	public List<Boardgame> searchBoardgameByName(@PathVariable(value="name") String name)
+	{
+		return boardgameRepo.findByNameContaining(name);
+	}
 }
