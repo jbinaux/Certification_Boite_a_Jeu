@@ -8,13 +8,14 @@ import { DisplayReviewsComponent } from './display-reviews/display-reviews.compo
 import { BestGamesComponent } from './best-games/best-games.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { RegisterComponent } from './register/register.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { SignInRegisterMasterComponent } from './sign-in-register-master/sign-in-register-master.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GamepageComponent } from './gamepage/gamepage.component';
+import { SearchResultComponent } from './search-result/search-result.component';
 
 
 @NgModule({
@@ -29,12 +30,14 @@ import { GamepageComponent } from './gamepage/gamepage.component';
     SignInRegisterMasterComponent,
     HomepageComponent,
     FooterComponent,
-    GamepageComponent
+    GamepageComponent,
+    SearchResultComponent
   ],
   imports: [
     BrowserModule,
     MDBBootstrapModule.forRoot(),
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule
   ],

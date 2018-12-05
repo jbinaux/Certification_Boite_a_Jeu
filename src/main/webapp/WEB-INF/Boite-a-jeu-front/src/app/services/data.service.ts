@@ -14,7 +14,11 @@ export class DataService {
     return this.httpClient.get<Boardgame[]>('http://localhost:8080/api/boardgame');
   }
 
-  public getBoardgame(id): Observable<Boardgame> {
+  public getBoardgame(id: number): Observable<Boardgame> {
     return this.httpClient.get<Boardgame>('http://localhost:8080/api/boardgame/' + id);
+  }
+
+  public searchBoardgamesByName(name: string): Observable<Boardgame[]> {
+    return this.httpClient.get<Boardgame[]>('http://localhost:8080/api/boardgame/recherche/' + name);
   }
 }

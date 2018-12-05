@@ -8,7 +8,8 @@ Insert into boardgame (age, date_edition, name, nb_player, play_time, rating)
 values
 ('24-99', '1994-05-16', "jonasz l\'ananas", '2-10', '2h', 0),
 ('10-80', '2010-01-01', 'splendor', '1', '1h', 0),
-('8', '2011-01-01', '7 wonders', '4', '30mn', 0);
+('8', '2011-01-01', '7 wonders', '4', '30mn', 0),
+('10-80', '2010-01-01', 'splendor', '1', '1h', 0);
 
 Insert into review (rating, text, title, boardgame_id, user_id)
 values
