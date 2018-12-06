@@ -1,4 +1,4 @@
-package comparator;
+package co.simplon.BoiteAJeu.comparator;
 
 import java.util.Comparator;
 

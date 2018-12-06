@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import co.simplon.BoiteAJeu.comparator.DateComparator;
 import co.simplon.BoiteAJeu.model.Boardgame;
 import co.simplon.BoiteAJeu.model.Review;
 import co.simplon.BoiteAJeu.repository.BoardgameRepository;
-import comparator.DateComparator;
 
 @CrossOrigin("http://localhost:4200")
 @RestController
