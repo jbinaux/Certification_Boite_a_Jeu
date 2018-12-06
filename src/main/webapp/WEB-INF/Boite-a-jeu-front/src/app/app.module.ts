@@ -17,7 +17,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { GamepageComponent } from './gamepage/gamepage.component';
 import { SearchResultComponent } from './search-result/search-result.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

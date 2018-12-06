@@ -1,3 +1,19 @@
-<p>
-  search-result works!
-</p>
+<h1>Resultat pour "{{search}}"</h1>
+<p>triés par :</p>
+<form class="form-group">
+  <select name="" id="" class="form-control">
+    <option value="">récent</option>
+    <option value="">age</option>
+    <option value="">meilleurs</option>
+  </select>
+</form>
+<ng-container *ngIf="boardgames">
+  <div *ngFor="let bg of boardgames">
+    <div class="col-4 image">
+
+    </div>
+    <div class="col-8 text">
+      <h3>{{ bg.name }}</h3>
+    </div>
+  </div>
+</ng-container>

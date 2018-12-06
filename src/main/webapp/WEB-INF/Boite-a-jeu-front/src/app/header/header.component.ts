@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router} from '@angular/router';
 import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
   }
 
   onSubmit() {
-    this.router.navigateByUrl('http://localhost:4200/recherche');
+    this.router.navigate(['/recherche', this.searchForm.value]);
   }
 
 

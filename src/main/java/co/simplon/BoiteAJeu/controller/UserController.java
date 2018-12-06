@@ -3,6 +3,7 @@ package co.simplon.BoiteAJeu.controller;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,5 +25,11 @@ public class UserController {
 	public List<User> getUsers()
 	{
 		return userRepo.findAll();
+	}
+	
+	@GetMapping("/{id}")
+	public User getUserById(@PathVariable(value="id") long id)
+	{
+		return userRepo.findOne(id);
 	}
 }

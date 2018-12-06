@@ -21,6 +21,8 @@ public class Boardgame {
 	private String age;
 	private String nbPlayer;
 	private String playTime;
+	private String editor;
+	private String author;
 	private double rating;
 	
 	@OneToMany(mappedBy = "boardgame")
@@ -88,6 +90,22 @@ public class Boardgame {
 
 	public void setReviews(List<Review> reviews) {
 		this.reviews = reviews;
+	}
+
+	public String getEditor() {
+		return editor;
+	}
+
+	public void setEditor(String editor) {
+		this.editor = editor;
+	}
+
+	public String getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
 	}
 	
 	
