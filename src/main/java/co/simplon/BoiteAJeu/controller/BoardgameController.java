@@ -13,7 +13,7 @@ import co.simplon.BoiteAJeu.model.Boardgame;
 import co.simplon.BoiteAJeu.model.Review;
 import co.simplon.BoiteAJeu.repository.BoardgameRepository;
 
-@CrossOrigin(origins="http://localhost:4200")
+@CrossOrigin("http://localhost:4200")
 @RestController
 @RequestMapping("/api/boardgame")
 public class BoardgameController {
