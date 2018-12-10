@@ -1,8 +1,14 @@
-Insert into user (admin, email, password, username)
+Insert into user (admin, username)
 values
-(false, 'truc@gmail.com', '1234', 'truc'),
-(false, 'machin@hotmail.fr', '5678', 'machin'),
-(true, 'chouette@yahoo.fr', 'abcd', 'chouette');
+(false, 'truc'),
+(false, 'machin'),
+(true, 'chouette');
+
+Insert into login (email, password, user_id)
+values
+('truc@gmail.com', '1234', 1),
+('machin@hotmail.fr', '5678', 2),
+('chouette@yahoo.fr', 'abcd', 3);
 
 Insert into boardgame (age, author, date_edition, editor, name, nb_player, play_time, rating)
 values

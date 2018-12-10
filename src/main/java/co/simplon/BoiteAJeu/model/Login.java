@@ -16,7 +16,7 @@ public class Login {
 	private String email;
 	private String password;
 	
-	@OneToOne(mappedBy = "login")
+	@OneToOne
 	private User user;
 
 	public long getId() {

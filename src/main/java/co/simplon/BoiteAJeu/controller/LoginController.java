@@ -8,30 +8,30 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import co.simplon.BoiteAJeu.model.User;
-import co.simplon.BoiteAJeu.repository.UserRepository;
+import co.simplon.BoiteAJeu.model.Login;
+import co.simplon.BoiteAJeu.repository.LoginRepository;
 
 @CrossOrigin("http://localhost:4200")
 @RestController
-@RequestMapping("/api/user")
-public class UserController {
+@RequestMapping("/api/login")
+public class LoginController {
 
-	private UserRepository userRepo;
+	private LoginRepository loginRepo;
 	
-	public UserController(UserRepository userRepo)
+	public LoginController(LoginRepository loginRepo)
 	{
-		this.userRepo = userRepo;
+		this.loginRepo = loginRepo;
 	}
 	
 	@GetMapping
-	public List<User> getUsers()
+	public List<Login> getLogins()
 	{
-		return userRepo.findAll();
+		return loginRepo.findAll();
 	}
 	
 	@GetMapping("/{id}")
-	public User getUserById(@PathVariable(value="id") long id)
+	public Login getLoginById(@PathVariable(value="id") long id)
 	{
-		return userRepo.findOne(id);
+		return loginRepo.findOne(id);
 	}
 }

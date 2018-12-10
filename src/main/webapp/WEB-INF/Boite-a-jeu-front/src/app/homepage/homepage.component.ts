@@ -11,17 +11,14 @@ export class HomepageComponent implements OnInit {
 
   boardgames: Boardgame[];
   bgLength: number;
-  recieved: boolean;
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
     this.bgLength = 0;
-    this.recieved = false;
     this.dataService.getBoardgames().subscribe(
       bg => {
         this.boardgames = bg;
         this.bgLength = this.boardgames.length - 1;
-        this.recieved = true;
       }
     );
   }

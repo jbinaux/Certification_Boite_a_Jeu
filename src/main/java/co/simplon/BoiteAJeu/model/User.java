@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -23,6 +24,10 @@ public class User {
 	@JsonIgnore
 	@OneToMany(mappedBy = "user")
 	private List<Review> reviews;
+	
+	@JsonIgnore
+	@OneToOne
+	private Login login;
 
 	public long getId() {
 		return id;
@@ -54,6 +59,14 @@ public class User {
 
 	public void setReviews(List<Review> reviews) {
 		this.reviews = reviews;
+	}
+
+	public Login getLogin() {
+		return login;
+	}
+
+	public void setLogin(Login login) {
+		this.login = login;
 	}
 	
 	
