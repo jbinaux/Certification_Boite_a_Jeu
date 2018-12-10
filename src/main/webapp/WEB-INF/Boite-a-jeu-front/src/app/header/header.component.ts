@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
   }
 
   onSubmit() {
-    this.router.navigate(['/recherche', this.searchForm.value]);
+    this.router.navigate(['/search', this.searchForm.value]);
   }
 
 

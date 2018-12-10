@@ -11,11 +11,18 @@ import { ActivatedRoute } from '@angular/router';
 export class GamepageComponent implements OnInit {
 
   boardgame: Boardgame;
+  recieved: boolean;
   constructor(private route: ActivatedRoute, private dataService: DataService) { }
 
   ngOnInit() {
+    this.recieved = false;
     const id = +this.route.snapshot.paramMap.get('id');
-    this.dataService.getBoardgame(id).subscribe(bg => this.boardgame = bg);
+    this.dataService.getBoardgame(id).subscribe(
+      bg => {
+        this.boardgame = bg;
+        this.recieved = true;
+      }
+    );
   }
 
 }
