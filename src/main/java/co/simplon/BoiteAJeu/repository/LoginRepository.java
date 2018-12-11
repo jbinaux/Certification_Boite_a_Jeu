@@ -6,4 +6,5 @@ import co.simplon.BoiteAJeu.model.Login;
 
 public interface LoginRepository extends JpaRepository<Login, Long> {
 
+	Login findByEmail(String email);
 }
