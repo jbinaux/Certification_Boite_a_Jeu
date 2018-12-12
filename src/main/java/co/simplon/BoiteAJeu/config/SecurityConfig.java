@@ -20,7 +20,7 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
-import co.simplon.BoiteAJeu.service.UserDetailsServiceImpl;
+import co.simplon.BoiteAJeu.service.LoginService;
 
 @Configuration
 @EnableWebSecurity
@@ -28,7 +28,7 @@ import co.simplon.BoiteAJeu.service.UserDetailsServiceImpl;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
-	private UserDetailsServiceImpl userDetailsService;
+	private LoginService userDetailsService;
 
 	@Override
 	@Bean

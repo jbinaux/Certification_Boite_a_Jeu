@@ -2,6 +2,7 @@ package co.simplon.BoiteAJeu.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,19 +12,15 @@ import org.springframework.web.bind.annotation.RestController;
 import co.simplon.BoiteAJeu.comparator.DateComparator;
 import co.simplon.BoiteAJeu.model.Boardgame;
 import co.simplon.BoiteAJeu.model.Review;
-import co.simplon.BoiteAJeu.repository.BoardgameRepository;
+import co.simplon.BoiteAJeu.service.BoardgameService;
 
 @CrossOrigin("http://localhost:4200")
 @RestController
 @RequestMapping("/api/boardgame")
 public class BoardgameController {
 
-	private BoardgameRepository boardgameRepo;
-	
-	public BoardgameController (BoardgameRepository boardgameRepo)
-	{
-		this.boardgameRepo = boardgameRepo;
-	}
+	@Autowired
+	private BoardgameService boardgameService;
 	
 	private double averageReviews (List<Review> list)
 	{
@@ -46,7 +43,7 @@ public class BoardgameController {
 	public List<Boardgame> getBoardgame()
 	{
 		DateComparator comp = new DateComparator();
-		List<Boardgame> list = boardgameRepo.findAll();
+		List<Boardgame> list = boardgameService.findAll();
 		for (Boardgame bg : list)
 		{
 			bg.setRating(averageReviews(bg.getReviews()));
@@ -58,7 +55,7 @@ public class BoardgameController {
 	@GetMapping("/{id}")
 	public Boardgame getBoardgameById(@PathVariable(value="id") long id)
 	{
-		Boardgame bg = boardgameRepo.findOne(id);
+		Boardgame bg = boardgameService.findOne(id);
 		bg.setRating(averageReviews(bg.getReviews()));
 		return bg;
 	}
@@ -66,6 +63,6 @@ public class BoardgameController {
 	@GetMapping("/recherche/{name}")
 	public List<Boardgame> searchBoardgameByName(@PathVariable(value="name") String name)
 	{
-		return boardgameRepo.findByNameContaining(name);
+		return boardgameService.findByNameContaining(name);
 	}
 }

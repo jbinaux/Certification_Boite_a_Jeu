@@ -1,5 +1,7 @@
 package co.simplon.BoiteAJeu.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -9,8 +11,8 @@ import org.springframework.stereotype.Service;
 import co.simplon.BoiteAJeu.model.Login;
 import co.simplon.BoiteAJeu.repository.LoginRepository;
 
-@Service(value = "userService")
-public class UserDetailsServiceImpl implements UserDetailsService{
+@Service
+public class LoginService implements UserDetailsService{
 
 	@Autowired
 	private LoginRepository loginRepo;
@@ -25,4 +27,13 @@ public class UserDetailsServiceImpl implements UserDetailsService{
 		throw new UsernameNotFoundException(arg0);
 	}
 	
+	public List<Login> findAll()
+	{
+		return loginRepo.findAll();
+	}
+	
+	public Login findOne(long id)
+	{
+		return loginRepo.findOne(id);
+	}
 }
