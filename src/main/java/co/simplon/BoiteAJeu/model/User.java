@@ -19,7 +19,6 @@ public class User {
 	private long id;
 	
 	private String username;
-	private boolean admin;
 	
 	@JsonIgnore
 	@OneToMany(mappedBy = "user")
@@ -43,14 +42,6 @@ public class User {
 
 	public void setUsername(String username) {
 		this.username = username;
-	}
-
-	public boolean isAdmin() {
-		return admin;
-	}
-
-	public void setAdmin(boolean admin) {
-		this.admin = admin;
 	}
 
 	public List<Review> getReviews() {

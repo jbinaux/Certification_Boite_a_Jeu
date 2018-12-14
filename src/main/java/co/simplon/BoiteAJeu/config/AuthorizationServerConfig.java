@@ -1,19 +1,19 @@
 package co.simplon.BoiteAJeu.config;
 
-import javax.annotation.Resource;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
+import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 
+import co.simplon.BoiteAJeu.service.ClientService;
 import co.simplon.BoiteAJeu.service.LoginService;
 
 @Configuration
@@ -31,12 +31,15 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	private DataSource dataSource;
 	
 	@Autowired
-	private LoginService userDetailsService;
+	private LoginService loginService;
+	
+	@Autowired
+	private ClientService clientService;
 
 	@Override
 	public void configure(ClientDetailsServiceConfigurer configurer) throws Exception {
 
-		configurer.jdbc(dataSource);
+		configurer.withClientDetails(clientService);
 	}
 	
 	@Override
@@ -44,6 +47,13 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 		endpoints
 		.tokenStore(tokenStore)
 		.authenticationManager(aM)
-		.userDetailsService(userDetailsService);
+		.userDetailsService(loginService);
 	}
+	
+	@Override
+    public void configure(AuthorizationServerSecurityConfigurer oauthServer) throws Exception {
+        oauthServer
+        .tokenKeyAccess("permitAll()")
+        .checkTokenAccess("isAuthenticated()");
+    }
 }

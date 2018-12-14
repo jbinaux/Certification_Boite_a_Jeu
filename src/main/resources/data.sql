@@ -1,14 +1,26 @@
-Insert into user (admin, username)
+Insert into user (username)
 values
-(false, 'truc'),
-(false, 'machin'),
-(true, 'chouette');
+('truc'),
+('machin'),
+('chouette');
 
-Insert into login (email, password, user_id)
+Insert into authority (authority)
 values
-('truc@gmail.com', '1234', 1),
-('machin@hotmail.fr', '5678', 2),
-('chouette@yahoo.fr', 'abcd', 3);
+("ROLE_USER"),
+("ROLE_ADMIN");
+
+Insert into login (email, password, user_id, enabled, credentials_non_expired, account_non_expired, account_non_locked)
+values
+('truc@gmail.com', '1234', 1, true, true, true, true),
+('machin@hotmail.fr', '5678', 2, true, true, true, true),
+('chouette@yahoo.fr', 'abcd', 3, true, true, true, true);
+
+insert into login_authorities (login_id, authorities_id)
+values
+(1,1),
+(2,1),
+(3,1),
+(3,2);
 
 Insert into boardgame (age, author, date_edition, editor, name, nb_player, play_time, rating)
 values
@@ -26,3 +38,7 @@ values
 (4,'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua','chouette',3,2),
 (5,'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua','parfait',3,3),
 (4,'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua','bloup',3,1);
+
+Insert into client (client_id, client_secret, resource_ids, secret_required, scoped, scope, authorized_grant_types, registered_redirect_uri, authorities, access_token_validity_seconds, refresh_token_validity_seconds, auto_approve)
+values
+("BoiteAJeu", "1234", "resource_id", true, false, "read", "client_credentials", "http://localhost:4200", "USER",36000,36000,true);
