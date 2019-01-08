@@ -3,6 +3,7 @@ package co.simplon.BoiteAJeu.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,6 +27,7 @@ public class UserController {
 		return userService.findAll();
 	}
 	
+	@PreAuthorize("@userChecker.isUser(#id)")
 	@GetMapping("/{id}")
 	public User getUserById(@PathVariable(value="id") long id)
 	{

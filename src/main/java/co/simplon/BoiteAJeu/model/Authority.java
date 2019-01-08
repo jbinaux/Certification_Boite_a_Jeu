@@ -34,7 +34,5 @@ public class Authority implements GrantedAuthority{
 	public void setAuthority(String authority) {
 		this.authority = authority;
 	}
-	
-	
 
 }

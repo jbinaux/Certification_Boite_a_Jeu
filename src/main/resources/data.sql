@@ -41,4 +41,5 @@ values
 
 Insert into client (client_id, client_secret, resource_ids, secret_required, scoped, scope, authorized_grant_types, registered_redirect_uri, authorities, access_token_validity_seconds, refresh_token_validity_seconds, auto_approve)
 values
-("BoiteAJeu", "1234", "resource_id", true, false, "read", "client_credentials", "http://localhost:4200", "USER",36000,36000,true);
+("BoiteAJeu", "1234", "resource_id", true, false, "read", "password,client_credentials", "http://localhost:4200", "USER",36000,36000,true);
+
