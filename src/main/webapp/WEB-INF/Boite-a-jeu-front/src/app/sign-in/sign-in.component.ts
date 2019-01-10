@@ -1,5 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Location } from '@angular/common';
+import { FormGroup, FormControl } from '@angular/forms';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -9,8 +11,12 @@ import { Location } from '@angular/common';
 export class SignInComponent implements OnInit {
 
   @Output() event = new EventEmitter();
+  loginForm = new FormGroup({
+  	email: new FormControl(''),
+  	password: new FormControl('')
+  });
 
-  constructor(private location: Location) { }
+  constructor(private location: Location, private dataService: DataService) { }
 
   ngOnInit() {
   }
@@ -21,5 +27,9 @@ export class SignInComponent implements OnInit {
 
   toggleRegister() {
     this.event.emit('');
+  }
+
+  onSubmit() {
+  	this.dataService.getAuthToken(this.loginForm).subscribe( () => console.log("youhou"));
   }
 }
